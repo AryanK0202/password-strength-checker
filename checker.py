@@ -1,5 +1,15 @@
 from math import log, exp
 
+def extract_features(password):
+    return {
+        "length": len(password),
+        "upper": sum(1 for c in password if c.isupper()),
+        "lower": sum(1 for c in password if c.islower()),
+        "digits": sum(1 for c in password if c.isdigit()),
+        "symbols": sum(1 for c in password if not c.isalnum()),
+        "has_common": int(any(p in password.lower() for p in ["123", "password", "admin", "qwerty", "letmein"]))
+    }
+
 def sigmoid(x):
     return 1 / (1 + exp(-x + 2))
 
