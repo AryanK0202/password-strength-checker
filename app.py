@@ -29,5 +29,5 @@ if password:
         st.warning("Suggestions to improve password: ")
         for s in suggestion_list:
             st.markdown(f" - {s}")
-        else:
-            st.success("Your password is strong")
+    else:
+        st.success("Your password is strong")
